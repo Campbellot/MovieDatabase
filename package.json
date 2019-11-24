@@ -1,0 +1,20 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "Movie Database Program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "K Campbell",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "request": "^2.88.0",
+    "require": "^2.4.20",
+    "url": "^0.11.0"
+  }
+}
