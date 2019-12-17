@@ -15,12 +15,12 @@
             xhttp.onload = function() {
                 var data = JSON.parse(this.response);
                 var i;
-                var text = "<form action='/quizResults.php'>";
+                var text = "<form action='/quizResults.php' method='GET'>";
                 for (i = 0; i < data.results.length; i++) {
                     text += "<h4>"+data.results[i].question+"<h4><br><br>";
-                    text += "<label><input class='form-control' type='radio' style='margin-left: 40px;' id = '' value=''>"+data.results[i].correct_answer+"</label><br>";
+                    text += "<label><input class='form-control' type='radio' style='margin-left: 40px;' name = 'question_"+i+"' id = 'correct'>"+data.results[i].correct_answer+"</label><br>";
                     for (k = 0; k < 3; k++) {
-                        text += "<label><input class='form-control' type='radio' style='margin-left: 40px;' id = '' value=''>"+data.results[i].incorrect_answers[k]+"</label><br>";
+                        text += "<label><input class='form-control' type='radio' style='margin-left: 40px;' name = 'question_"+i+"' id = 'incorrect'>"+data.results[i].incorrect_answers[k]+"</label><br>";
                     }
 
                     
