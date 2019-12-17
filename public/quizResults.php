@@ -1,5 +1,5 @@
 <?php
-$test = $_GET['amount'];
+$test = $_GET['numQ'];
 
 echo $test;
 
