@@ -34,15 +34,15 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+app.get('/quizResults', (req, res) => {
+  console.log(req.query)
+})
+
 // var ms = require('./mathService');
 
 app.set('view engine', 'ejs');
 app.set("port", (process.env.PORT || 3000));
 
-app.get("/quizResults", function(req, res){
-    
-    res.render("quizResults.php");//looks in views diretory
-});
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
