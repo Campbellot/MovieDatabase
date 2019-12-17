@@ -1,9 +1,6 @@
 <?php
+$test = $_GET['amount'];
 
+echo $test;
 
 ?>
-
-<!DOCTYPE html>
-<html>
-    <body><h1>testing</h1></body>
-</html>
