@@ -12,16 +12,16 @@
             var url = 'https://opentdb.com/api.php?amount='+numQ+'&category=11&difficulty='+difficulty;
             
 
-            xhttp.onload = function(numQ) {
+            xhttp.onload = function() {
                 var data = JSON.parse(this.response);
                 var i;
                 var text = "";
-                for (i = 0; i < numQ; i++) {
-                    document.getElementById("questions").innerHTML += "<h4>"+data.results[i].question+"<h4><br><br>";
+                for (i = 0; i < data.results.length; i++) {
+                    text += "<h4>"+data.results[i].question+"<h4><br><br>";
                 }
 
                 // console.log(data);
-                // document.getElementById("questions").innerHTML = text;
+                document.getElementById("questions").innerHTML = text;
                 
                 
             };
