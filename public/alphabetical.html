@@ -5,11 +5,30 @@
     <title>Movie Database</title>
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
     <script>
-    
+        function search() {
+            var difficulty = document.getElementById("difficulty").value;
+            var numQ = document.getElementById("numQ").value;
+            var xhttp = new XMLHttpRequest();
+            var url = 'https://opentdb.com/api.php?amount='+numQ+'&category=11&difficulty='+difficulty;
+            
+
+            xhttp.onload = function() {
+                var data = JSON.parse(this.response);
+                document.getElementById("questions").innerHTML = data;
+                
+                
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+            
+        }
+        
+
+
     </script>
 </head>
 <body >
-    <div class = "container" >
+    <div class = "container">
         <h1><a href="../img/why.jpg">Movie Database</a></h1>
 
         <div class="navbar">
@@ -17,17 +36,35 @@
                 <div class="container">
                 <ul class="nav">
                     <li><a href="/">Search</a></li>
-                    <li class="active"><a href="/alphabetical.html">A-Z Movies Wiki</a></li>
+                    <li class="active"><a href="/alphabetical.html">Movie Trivia</a></li>
                     
                 </ul>
                 </div>
             </div>
         </div>
-        
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Lists_of_films#Alphabetical_indices" width="100%" height="850"></iframe>
+
+        <div class="hero-unit" style ="background-image: url('../img/film.jpg');">
+            <div class = "pagination-centered">
+                <p>Select amount of questions & Difficulty:</p>
+                <div class = "form-group">
+                    <label>Number of questions</label>
+                    <input class="form-control" type="number" id = "numQ">
+                    <label>Difficulty</label>
+                    <input class="form-control" type="radio" id = "difficulty" value="easy">
+                    <input class="form-control" type="radio" id = "difficulty" value="medium">        
+                    <input class="form-control" type="radio" id = "difficulty" value="hard">                
+                    <input type="submit" class="btn-success btn-small" onclick = "search()" value = "Search"/>
+                </div>
+            </div>
+                
         </div>
-        
+
+        <div class="row" style ="background-image: url('../img/dynamic.jpg');">
+            <div class="span12">
+                <p id = "questions" class = "pagination-centered"></p>
+            </div>
+            
+        </div>
 
 
 
