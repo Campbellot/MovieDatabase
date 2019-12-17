@@ -36,14 +36,6 @@
             xhttp.send();
             
         }
-        (function ($) {
-  $('.spinner .btn:first-of-type').on('click', function() {
-    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
-  });
-  $('.spinner .btn:last-of-type').on('click', function() {
-    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
-  });
-})(jQuery);
         
 
 
@@ -76,16 +68,16 @@
 
                 <label>Difficulty</label>
                 <div class="radio">
-                <label><input type="radio" name="difficulty" id = "easy">Easy</label>
+                <label><input type="radio" name="difficulty" id = "difficulty" value = "easy">Easy</label>
                 </div>
                 <div class="radio">
-                <label><input type="radio" name="difficulty" id = "medium">Medium</label>
+                <label><input type="radio" name="difficulty" id = "difficulty" value = "medium">Medium</label>
                 </div>
                 <div class="radio">
-                <label><input type="radio" name="difficulty" id = "hard">Hard</label>
+                <label><input type="radio" name="difficulty" id = "difficulty" value = "hard">Hard</label>
                 </div>
                 <br>
-                <button type="button" class="btn btn-outline-success" onclick="search()">Go!</button>
+                <button type="button" class="btn btn-success" onclick="search()">Go!</button>
                     
             </div>
                 
