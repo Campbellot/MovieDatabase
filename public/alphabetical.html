@@ -9,7 +9,7 @@
             var difficulty = document.getElementById("difficulty").value;
             var numQ = document.getElementById("numQ").value;
             var xhttp = new XMLHttpRequest();
-            var url = 'https://opentdb.com/api.php?amount='+numQ+'&category=11&difficulty='+difficulty;
+            var url = 'https://opentdb.com/api.php?amount='+numQ+'&category=11&difficulty='+difficulty+'&type=multiple';
             
 
             xhttp.onload = function() {
@@ -18,6 +18,13 @@
                 var text = "";
                 for (i = 0; i < data.results.length; i++) {
                     text += "<h4>"+data.results[i].question+"<h4><br><br>";
+                    text += "<input class='form-control' type='radio' id = '' value=''><label>"+data.results[i].correct_answer+"</label><br>";
+                    for (k = 0; k < 3; k++) {
+                        text += "<input class='form-control' type='radio' id = '' value=''><label>"+data.results[i].incorrect_answers[k]+"</label><br>";
+                    }
+                    test += "<br>";
+
+                    
                 }
 
                 // console.log(data);
@@ -56,9 +63,12 @@
                 <div class = "form-group">
                     <label>Number of questions</label>
                     <input class="form-control" type="number" id = "numQ">
-                    <label>Difficulty</label>
+                    <label>Difficulty:</label><br>
+                    <label>Easy:</label><br>
                     <input class="form-control" type="radio" id = "difficulty" value="easy">
+                    <label>Medium:</label><br>
                     <input class="form-control" type="radio" id = "difficulty" value="medium">        
+                    <label>Hard:</label><br>
                     <input class="form-control" type="radio" id = "difficulty" value="hard">                
                     <input type="submit" class="btn-success btn-small" onclick = "search()" value = "Search"/>
                 </div>
