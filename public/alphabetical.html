@@ -15,7 +15,7 @@
             xhttp.onload = function() {
                 var data = JSON.parse(this.response);
                 var i;
-                var text = "<form action='/quizResults.php' method='GET'>";
+                var text = "<form action='/quizResults.php' method='GET'><input type='number' name = 'numQ' value="+data.results.length+" class='field left' readonly>";
                 for (i = 0; i < data.results.length; i++) {
                     text += "<h4>"+data.results[i].question+"<h4><br><br>";
                     text += "<label><input class='form-control' type='radio' style='margin-left: 40px;' name = 'question_"+i+"' value = 'correct'>"+data.results[i].correct_answer+"</label><br>";
