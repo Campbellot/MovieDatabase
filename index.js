@@ -36,7 +36,7 @@ var bodyParser = require('body-parser');
 
 app.get('/quizResults', (req, res) => {
   console.log(req.query)
-})
+});
 
 // var ms = require('./mathService');
 
