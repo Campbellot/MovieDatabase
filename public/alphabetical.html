@@ -36,6 +36,14 @@
             xhttp.send();
             
         }
+        (function ($) {
+  $('.spinner .btn:first-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+  });
+  $('.spinner .btn:last-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+  });
+})(jQuery);
         
 
 
@@ -57,21 +65,31 @@
             </div>
         </div>
 
-        <div class="hero-unit" style ="background-image: url('../img/film.jpg');">
-            <div class = "pagination-centered">
-                <p>Select amount of questions & Difficulty:</p>
-                <div class = "form-group">
-                    <label>Number of questions</label>
-                    <input class="form-control" type="number" id = "numQ">
-                    <label>Difficulty:</label><br><br>
-                    <label>Easy:</label>
-                    <input class="form-control" type="radio" id = "difficulty" value="easy"><br>
-                    <label>Medium:</label>
-                    <input class="form-control" type="radio" id = "difficulty" value="medium"><br>        
-                    <label>Hard:</label>
-                    <input class="form-control" type="radio" id = "difficulty" value="hard"><br>                
-                    <input type="submit" class="btn-success btn-small" onclick = "search()" value = "Search"/>
-                </div>
+        <div class="hero-unit"> <!-- style ="background-image: url('../img/film.jpg');"> -->
+            <div class="container">
+                <h1>Movie Trivia!</h1>
+                <p>Select Number of Questions & Difficulty of Trivia Quiz:</p>
+                <form>
+                     
+                    <div class="input-group spinner">
+                        <input type="text" class="form-control" value="5" id = "numQ">
+                        <div class="input-group-btn-vertical">
+                            <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                            <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                        </div>
+                    </div>
+                    <label>Difficulty</label>
+                    <div class="radio">
+                    <label><input type="radio" name="difficulty" id = "easy"></label>
+                    </div>
+                    <div class="radio">
+                    <label><input type="radio" name="difficulty" id = "medium"></label>
+                    </div>
+                    <div class="radio">
+                    <label><input type="radio" name="difficulty" id = "hard"></label>
+                    </div>
+                    
+                </form>
             </div>
                 
         </div>
