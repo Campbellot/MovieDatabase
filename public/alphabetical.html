@@ -68,25 +68,22 @@
         <div class="hero-unit"> <!-- style ="background-image: url('../img/film.jpg');"> -->
             <div class="container">
                 <h1>Movie Trivia!</h1>
-                <p>Select Number of Questions & Difficulty of Trivia Quiz:</p>
+                <p>Select Number of Questions:</p>
                 <form>
-                     
-                    <div class="input-group spinner">
-                        <input type="text" class="form-control" value="5" id = "numQ">
-                        <div class="input-group-btn-vertical">
-                            <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
-                            <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
-                        </div>
+                    <div class="number">
+                    <label><input type="number" name="numQ" id = "numQ"> questions</label>
                     </div>
+                    
+
                     <label>Difficulty</label>
                     <div class="radio">
-                    <label><input type="radio" name="difficulty" id = "easy"></label>
+                    <label><input type="radio" name="difficulty" id = "easy">Easy</label>
                     </div>
                     <div class="radio">
-                    <label><input type="radio" name="difficulty" id = "medium"></label>
+                    <label><input type="radio" name="difficulty" id = "medium">Medium</label>
                     </div>
                     <div class="radio">
-                    <label><input type="radio" name="difficulty" id = "hard"></label>
+                    <label><input type="radio" name="difficulty" id = "hard">Hard</label>
                     </div>
                     
                 </form>
