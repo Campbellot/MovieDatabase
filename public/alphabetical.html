@@ -22,7 +22,7 @@
                     for (k = 0; k < 3; k++) {
                         text += "<input class='form-control' type='radio' id = '' value=''><label>"+data.results[i].incorrect_answers[k]+"</label><br>";
                     }
-                    test += "<br>";
+                    text += "<br>";
 
                     
                 }
@@ -63,13 +63,13 @@
                 <div class = "form-group">
                     <label>Number of questions</label>
                     <input class="form-control" type="number" id = "numQ">
-                    <label>Difficulty:</label><br>
-                    <label>Easy:</label><br>
-                    <input class="form-control" type="radio" id = "difficulty" value="easy">
-                    <label>Medium:</label><br>
-                    <input class="form-control" type="radio" id = "difficulty" value="medium">        
-                    <label>Hard:</label><br>
-                    <input class="form-control" type="radio" id = "difficulty" value="hard">                
+                    <label>Difficulty:</label><br><br>
+                    <label>Easy:</label>
+                    <input class="form-control" type="radio" id = "difficulty" value="easy"><br>
+                    <label>Medium:</label>
+                    <input class="form-control" type="radio" id = "difficulty" value="medium"><br>        
+                    <label>Hard:</label>
+                    <input class="form-control" type="radio" id = "difficulty" value="hard"><br>                
                     <input type="submit" class="btn-success btn-small" onclick = "search()" value = "Search"/>
                 </div>
             </div>
