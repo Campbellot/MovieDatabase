@@ -34,7 +34,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
-var ms = require('./mathService');
+// var ms = require('./mathService');
 
 app.set('view engine', 'ejs');
 app.set("port", (process.env.PORT || 3000));
