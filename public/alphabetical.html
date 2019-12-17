@@ -15,14 +15,14 @@
             xhttp.onload = function() {
                 var data = JSON.parse(this.response);
                 var i;
-                var text = "";
+                var text = "<form action='/quizResults.php'>";
                 for (i = 0; i < data.results.length; i++) {
                     text += "<h4>"+data.results[i].question+"<h4><br><br>";
                     text += "<input class='form-control' type='radio' id = '' value=''><label>"+data.results[i].correct_answer+"</label><br>";
                     for (k = 0; k < 3; k++) {
                         text += "<input class='form-control' type='radio' id = '' value=''><label>"+data.results[i].incorrect_answers[k]+"</label><br>";
                     }
-                    text += "<br>";
+                    text += "<br><button type='submit' class='btn btn-primary'>Submit</button></form>";
 
                     
                 }
@@ -65,35 +65,35 @@
             </div>
         </div>
 
-        <div class="hero-unit"> <!-- style ="background-image: url('../img/film.jpg');"> -->
+        <div class="hero-unit" style ="background-image: url('../img/dynamic.jpg');"> -->
             <div class="container">
                 <h1>Movie Trivia!</h1>
                 <p>Select Number of Questions:</p>
-                <form>
-                    <div class="number">
-                    <label><input type="number" name="numQ" id = "numQ"> questions</label>
-                    </div>
-                    
+                <div class="number">
+                <label><input type="number" name="numQ" id = "numQ"> questions</label>
+                </div>
+                
 
-                    <label>Difficulty</label>
-                    <div class="radio">
-                    <label><input type="radio" name="difficulty" id = "easy">Easy</label>
-                    </div>
-                    <div class="radio">
-                    <label><input type="radio" name="difficulty" id = "medium">Medium</label>
-                    </div>
-                    <div class="radio">
-                    <label><input type="radio" name="difficulty" id = "hard">Hard</label>
-                    </div>
+                <label>Difficulty</label>
+                <div class="radio">
+                <label><input type="radio" name="difficulty" id = "easy">Easy</label>
+                </div>
+                <div class="radio">
+                <label><input type="radio" name="difficulty" id = "medium">Medium</label>
+                </div>
+                <div class="radio">
+                <label><input type="radio" name="difficulty" id = "hard">Hard</label>
+                </div>
+                <br>
+                <button type="button" class="btn btn-outline-success" onclick="search()">Go!</button>
                     
-                </form>
             </div>
                 
         </div>
 
-        <div class="row" style ="background-image: url('../img/dynamic.jpg');">
+        <div class="row" style ="background-image: url('../img/film.jpg');">
             <div class="span12">
-                <p id = "questions" class = "pagination-centered"></p>
+                <p id = "questions" class = "pagination"></p>
             </div>
             
         </div>
