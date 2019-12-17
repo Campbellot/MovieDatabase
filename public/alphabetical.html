@@ -15,13 +15,13 @@
             xhttp.onload = function(numQ) {
                 var data = JSON.parse(this.response);
                 var i;
-                var text = '';
+                var text = "";
                 for (i = 0; i < numQ; i++) {
-                    text += "<h4>"+data.results[i].question+"<h4><br><br>";
+                    document.getElementById("questions").innerHTML += "<h4>"+data.results[i].question+"<h4><br><br>";
                 }
 
                 // console.log(data);
-                document.getElementById("questions").innerHTML = text;
+                // document.getElementById("questions").innerHTML = text;
                 
                 
             };
